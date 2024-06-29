@@ -28,12 +28,12 @@ const campgroundRoutes = require('./routes/campgrounds')
 const reviewRoutes = require('./routes/reviews')
 const userRoutes = require('./routes/users')
 
-//const dbUrl = process.env.DB_URL
-const dbUrl = 'mongodb://localhost:27017/yelp-camp'
+const dbUrl = process.env.DB_URL
+//const dbUrl = 'mongodb://localhost:27017/yelp-camp'
 //local DB for development:  'mongodb://localhost:27017/yelp-camp',
 //production DB on cloud: dbUrl
 //connecting to mongoDB
-mongoose.connect('mongodb://localhost:27017/yelp-camp', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(() => {
         console.log('Mongo connection succesful!')
     })
